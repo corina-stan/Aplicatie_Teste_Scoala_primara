@@ -1,0 +1,129 @@
+<div class="login-container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg">
+          <div class="card-body p-5">
+            <!-- Logo și titlu -->
+            <div class="text-center mb-4">
+              <i class="bi bi-book-fill text-primary" style="font-size: 3rem;"></i>
+              <h2 class="mt-3 mb-1">Teste Școlare</h2>
+              <p class="text-muted">Autentificare</p>
+            </div>
+
+            <!-- Mesaj de success pentru înregistrare -->
+            <div *ngIf="route.snapshot.queryParams['registered'] === 'true'" class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <strong>Cont creat cu succes!</strong> Te poți autentifica acum.
+              <button type="button" class="btn-close" aria-label="Close" (click)="error = ''"></button>
+            </div>
+
+            <!-- Mesaj de eroare -->
+            <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i>
+              {{ error }}
+              <button type="button" class="btn-close" (click)="error = ''" aria-label="Close"></button>
+            </div>
+
+            <!-- Formular de login -->
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="email" class="form-label">
+                  <i class="bi bi-envelope me-2"></i>Email
+                </label>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email"
+                  formControlName="email"
+                  [class.is-invalid]="submitted && f['email'].errors"
+                  placeholder="exemplu@email.ro"
+                >
+                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                  <div *ngIf="f['email'].errors['required']">Email-ul este obligatoriu</div>
+                  <div *ngIf="f['email'].errors['email']">Email-ul nu este valid</div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="password" class="form-label">
+                  <i class="bi bi-lock me-2"></i>Parolă
+                </label>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="password"
+                  formControlName="password"
+                  [class.is-invalid]="submitted && f['password'].errors"
+                  placeholder="Introduceți parola"
+                >
+                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                  <div *ngIf="f['password'].errors['required']">Parola este obligatorie</div>
+                </div>
+              </div>
+
+              <button 
+                type="submit" 
+                class="btn btn-primary w-100 mb-3"
+                [disabled]="loading"
+              >
+                <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+                <i *ngIf="!loading" class="bi bi-box-arrow-in-right me-2"></i>
+                {{ loading ? 'Se autentifică...' : 'Autentificare' }}
+              </button>
+            </form>
+
+            <!-- Conturi demo pentru testare -->
+            <div class="demo-accounts mt-4">
+              <p class="text-muted small text-center mb-3">
+                <i class="bi bi-info-circle me-1"></i>
+                Conturi demo pentru testare:
+              </p>
+              <div class="d-grid gap-2">
+                <button 
+                  type="button" 
+                  class="btn btn-outline-primary btn-sm"
+                  (click)="quickLogin('admin@teste.ro', 'admin123')"
+                >
+                  <i class="bi bi-shield-check me-2"></i>Administrator
+                </button>
+                <button 
+                  type="button" 
+                  class="btn btn-outline-success btn-sm"
+                  (click)="quickLogin('parinte1@teste.ro', 'parinte123')"
+                >
+                  <i class="bi bi-person-check me-2"></i>Părinte
+                </button>
+                <button 
+                  type="button" 
+                  class="btn btn-outline-info btn-sm"
+                  (click)="quickLogin('copil1@teste.ro', 'copil123')"
+                >
+                  <i class="bi bi-emoji-smile me-2"></i>Copil
+                </button>
+              </div>
+            </div>
+
+            <!-- Link către înregistrare -->
+            <div class="text-center mt-4">
+              <p class="text-muted mb-0">
+                Nu ai cont? 
+                <a routerLink="/register" class="text-decoration-none fw-bold text-primary">
+                  Înregistrează-te aici
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-3">
+          <p class="text-muted small">
+            <i class="bi bi-c-circle me-1"></i>
+            2024 Teste Școlare - Platformă educațională
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<div class="test-list-container">
+  <div class="container py-4">
+    <!-- Header cu breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/dashboard">
+            <i class="bi bi-house-door me-1"></i>Acasă
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          {{ discipline }} - Clasa {{ grade }}
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Titlu -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="mb-2">
+          <i [class]="'bi ' + getDisciplineIcon() + ' me-2 text-' + getDisciplineColor()"></i>
+          {{ discipline }}
+        </h2>
+        <p class="text-muted">
+          <i class="bi bi-mortarboard me-1"></i>
+          Clasa {{ grade }} - {{ filteredTests.length }} 
+          {{ filteredTests.length === 1 ? 'test disponibil' : 'teste disponibile' }}
+        </p>
+      </div>
+      <button 
+        *ngIf="canCreateTest()" 
+        class="btn btn-primary"
+        (click)="createNewTest()"
+      >
+        <i class="bi bi-plus-lg me-2"></i>
+        Adaugă Test
+      </button>
+    </div>
+
+    <!-- Bară de căutare -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="bi bi-search"></i>
+          </span>
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Caută după titlu, ID sau autor..."
+            [(ngModel)]="searchQuery"
+            (input)="filterTests()"
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Se încarcă...</span>
+      </div>
+      <p class="mt-3 text-muted">Se încarcă testele...</p>
+    </div>
+
+    <!-- Lista de teste -->
+    <div *ngIf="!loading && filteredTests.length === 0" class="alert alert-warning">
+      <i class="bi bi-info-circle me-2"></i>
+      <strong>Nu există teste disponibile pentru această categorie.</strong>
+      <span *ngIf="canCreateTest()">
+        <br>Poți fi primul care adaugă un test!
+      </span>
+    </div>
+
+    <div class="row" *ngIf="!loading && filteredTests.length > 0">
+      <div class="col-md-6 mb-4" *ngFor="let test of filteredTests">
+        <div class="card test-card shadow-sm h-100">
+          <div class="card-body">
+            <!-- Header cu titlu și ID -->
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h5 class="card-title mb-0">{{ test.title }}</h5>
+              <span 
+                class="badge bg-secondary test-id" 
+                [title]="'ID Test: ' + test.id"
+              >
+                {{ test.id }}
+              </span>
+            </div>
+
+            <!-- Informații test -->
+            <div class="test-info mb-3">
+              <p class="mb-2">
+                <i class="bi bi-person me-2 text-muted"></i>
+                <strong>Autor:</strong> {{ test.createdByName }}
+              </p>
+              <p class="mb-2">
+                <i class="bi bi-calendar3 me-2 text-muted"></i>
+                <strong>Creat:</strong> {{ test.createdAt | date: 'dd.MM.yyyy HH:mm' }}
+              </p>
+              <p class="mb-0">
+                <i class="bi bi-question-circle me-2 text-muted"></i>
+                <strong>Întrebări:</strong> {{ test.questions.length }}
+              </p>
+            </div>
+
+            <!-- Acțiuni -->
+            <div class="d-grid gap-2">
+              <button 
+                class="btn btn-primary"
+                (click)="viewTest(test.id)"
+              >
+                <i class="bi bi-play-circle me-2"></i>
+                Începe Testul
+              </button>
+
+              <!-- Butoane pentru admin și autor -->
+              <div class="btn-group" *ngIf="canEdit(test) || canDelete(test)">
+                <button 
+                  *ngIf="canEdit(test)"
+                  class="btn btn-outline-secondary btn-sm"
+                  (click)="editTest(test.id)"
+                >
+                  <i class="bi bi-pencil me-1"></i>
+                  Editează
+                </button>
+                <button 
+                  *ngIf="canDelete(test)"
+                  class="btn btn-outline-danger btn-sm"
+                  (click)="deleteTest(test)"
+                >
+                  <i class="bi bi-trash me-1"></i>
+                  Șterge
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buton înapoi -->
+    <div class="text-center mt-4">
+      <button class="btn btn-outline-secondary" routerLink="/dashboard">
+        <i class="bi bi-arrow-left me-2"></i>
+        Înapoi la Dashboard
+      </button>
+    </div>
+  </div>
+</div>

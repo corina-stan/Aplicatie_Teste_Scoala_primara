@@ -1,0 +1,210 @@
+<div class="dashboard-container">
+  <div class="container py-4">
+    <!-- Salut utilizator -->
+    <div class="welcome-section mb-4">
+      <h1 class="display-5 fw-bold mb-2">
+        {{ getUserGreeting() }}, {{ currentUser?.name }}! 👋
+      </h1>
+      <p class="lead text-muted">
+        Bine ai venit pe platforma de teste școlare. Alege o disciplină pentru a începe.
+      </p>
+    </div>
+
+    <!-- Statistici rapid -->
+    <div class="row mb-4">
+      <div class="col-md-4 mb-3">
+        <div class="card stat-card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-muted mb-1">Total Teste</h6>
+                <h2 class="mb-0">{{ totalTests }}</h2>
+              </div>
+              <i class="bi bi-journal-text stat-icon text-primary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <div class="card stat-card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-muted mb-1">Discipline</h6>
+                <h2 class="mb-0">3</h2>
+              </div>
+              <i class="bi bi-bookmarks stat-icon text-success"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <div class="card stat-card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-muted mb-1">Clase</h6>
+                <h2 class="mb-0">I - IV</h2>
+              </div>
+              <i class="bi bi-mortarboard stat-icon text-info"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buton adăugare test (doar pentru admin și părinte) -->
+    <div class="row mb-4" *ngIf="canManageTests()">
+      <div class="col-12">
+        <div class="alert alert-info d-flex justify-content-between align-items-center" role="alert">
+          <div>
+            <i class="bi bi-plus-circle-fill me-2"></i>
+            <strong>Adaugă un test nou</strong> pentru a contribui la platformă
+          </div>
+          <button class="btn btn-primary" (click)="createNewTest()">
+            <i class="bi bi-plus-lg me-2"></i>
+            Creare Test
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secțiunea Discipline -->
+    <div class="mb-5">
+      <h3 class="mb-4">
+        <i class="bi bi-grid me-2"></i>
+        Discipline Disponibile
+      </h3>
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let discipline of disciplines">
+          <div class="card discipline-card shadow-sm h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i [class]="'bi ' + discipline.icon + ' discipline-icon text-' + discipline.color"></i>
+              </div>
+              <h5 class="card-title text-center mb-2">{{ discipline.name }}</h5>
+              <p class="card-text text-muted text-center mb-3">
+                {{ discipline.description }}
+              </p>
+              <div class="d-grid gap-2">
+                <button 
+                  *ngFor="let grade of grades"
+                  class="btn btn-outline-{{ discipline.color }} btn-sm"
+                  (click)="navigateToDiscipline(discipline.name, grade.name)"
+                >
+                  <i [class]="'bi ' + grade.icon + ' me-2'"></i>
+                  Clasa {{ grade.name }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teste Recente -->
+    <div class="mb-5">
+      <h3 class="mb-4">
+        <i class="bi bi-clock-history me-2"></i>
+        Teste Adăugate Recent
+      </h3>
+
+      <div *ngIf="loading" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Se încarcă...</span>
+        </div>
+        <p class="mt-3 text-muted">Se încarcă testele...</p>
+      </div>
+
+      <div *ngIf="!loading && recentTests.length === 0" class="alert alert-warning">
+        <i class="bi bi-info-circle me-2"></i>
+        Nu există teste disponibile momentan.
+      </div>
+
+      <div class="row" *ngIf="!loading && recentTests.length > 0">
+        <div class="col-md-6 mb-3" *ngFor="let test of recentTests">
+          <div class="card test-card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h5 class="card-title mb-0">{{ test.title }}</h5>
+                <span class="badge bg-secondary">{{ test.id }}</span>
+              </div>
+              <p class="card-text text-muted mb-2">
+                <i class="bi bi-book me-1"></i>{{ test.discipline }} - 
+                <i class="bi bi-mortarboard ms-2 me-1"></i>Clasa {{ test.grade }}
+              </p>
+              <p class="card-text mb-2">
+                <small class="text-muted">
+                  <i class="bi bi-person me-1"></i>Creat de: {{ test.createdByName }}
+                </small>
+              </p>
+              <p class="card-text mb-3">
+                <small class="text-muted">
+                  <i class="bi bi-question-circle me-1"></i>{{ test.questions.length }} întrebări
+                </small>
+              </p>
+              <button 
+                class="btn btn-primary btn-sm w-100"
+                (click)="navigateToTest(test.id)"
+              >
+                <i class="bi bi-play-circle me-2"></i>
+                Începe Testul
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Informații utile -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card info-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-lightbulb me-2"></i>
+              Cum funcționează platforma?
+            </h5>
+            <div class="row mt-3">
+              <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                  <div class="step-number me-3">1</div>
+                  <div>
+                    <h6>Alege disciplina</h6>
+                    <p class="text-muted small">
+                      Selectează din meniul de sus disciplina dorită
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                  <div class="step-number me-3">2</div>
+                  <div>
+                    <h6>Selectează clasa</h6>
+                    <p class="text-muted small">
+                      Alege nivelul potrivit pentru tine
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                  <div class="step-number me-3">3</div>
+                  <div>
+                    <h6>Rezolvă testul</h6>
+                    <p class="text-muted small">
+                      Răspunde la întrebări și vezi rezultatul
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

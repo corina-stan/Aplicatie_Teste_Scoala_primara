@@ -1,0 +1,2280 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@teste.ro",
+      "password": "admin123",
+      "name": "Administrator Școlii",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "parinte1@teste.ro",
+      "password": "parinte123",
+      "name": "Ion Popescu",
+      "role": "parent"
+    },
+    {
+      "id": 3,
+      "email": "parinte2@teste.ro",
+      "password": "parinte123",
+      "name": "Maria Ionescu",
+      "role": "parent"
+    },
+    {
+      "id": 4,
+      "email": "copil1@teste.ro",
+      "password": "copil123",
+      "name": "Andrei Popescu",
+      "role": "child"
+    },
+    {
+      "id": 5,
+      "email": "copil2@teste.ro",
+      "password": "copil123",
+      "name": "Elena Ionescu",
+      "role": "child"
+    },
+    {
+      "id": 6,
+      "email": "corinachrc@gmail.com",
+      "password": "169553",
+      "name": "Corina Stan",
+      "role": "parent"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-MAT-1-001",
+      "title": "Adunarea până la 10",
+      "discipline": "Matematică",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-15T10:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 3 + 4?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cât face 10 - 3?",
+          "options": [
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Cât face 5 + 5?",
+          "options": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 4,
+          "question": "Cât face 8 - 2?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 5,
+          "question": "Cât face 2 + 6?",
+          "options": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-1-002",
+      "title": "Scăderea până la 10",
+      "discipline": "Matematică",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-16T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 9 - 4?",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Cât face 7 - 3?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Cât face 10 - 5?",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 4,
+          "question": "Cât face 6 - 2?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-1-003",
+      "title": "Numere până la 20",
+      "discipline": "Matematică",
+      "grade": "I",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-01-17T11:20:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care număr este mai mare: 15 sau 12?",
+          "options": [
+            "15",
+            "12",
+            "Sunt egale",
+            "Nu știu"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "Cât face 10 + 5?",
+          "options": [
+            "13",
+            "14",
+            "15",
+            "16"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Care număr vine după 18?",
+          "options": [
+            "17",
+            "19",
+            "20",
+            "21"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 4,
+          "question": "Cât face 20 - 10?",
+          "options": [
+            "5",
+            "8",
+            "10",
+            "15"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-1-004",
+      "title": "Forme geometrice",
+      "discipline": "Matematică",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-18T14:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Câte colțuri are un pătrat?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Câte laturi are un triunghi?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Ce formă are o minge?",
+          "options": [
+            "Pătrat",
+            "Triunghi",
+            "Cerc",
+            "Dreptunghi"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-2-001",
+      "title": "Înmulțirea cu 2 și 3",
+      "discipline": "Matematică",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-19T10:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 2 × 5?",
+          "options": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cât face 3 × 3?",
+          "options": [
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "correctAnswer": 3
+        },
+        {
+          "id": 3,
+          "question": "Cât face 2 × 8?",
+          "options": [
+            "14",
+            "15",
+            "16",
+            "17"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 4,
+          "question": "Cât face 3 × 5?",
+          "options": [
+            "12",
+            "13",
+            "14",
+            "15"
+          ],
+          "correctAnswer": 3
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-2-002",
+      "title": "Împărțirea simplă",
+      "discipline": "Matematică",
+      "grade": "II",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-01-20T11:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 10 ÷ 2?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cât face 15 ÷ 3?",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Cât face 20 ÷ 5?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-2-003",
+      "title": "Adunarea și scăderea până la 100",
+      "discipline": "Matematică",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-21T09:45:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 45 + 32?",
+          "options": [
+            "75",
+            "76",
+            "77",
+            "78"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cât face 68 - 25?",
+          "options": [
+            "41",
+            "42",
+            "43",
+            "44"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Cât face 50 + 50?",
+          "options": [
+            "90",
+            "95",
+            "100",
+            "105"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 4,
+          "question": "Cât face 80 - 35?",
+          "options": [
+            "43",
+            "44",
+            "45",
+            "46"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-2-004",
+      "title": "Tabla înmulțirii cu 5",
+      "discipline": "Matematică",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-22T10:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 5 × 2?",
+          "options": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cât face 5 × 4?",
+          "options": [
+            "15",
+            "20",
+            "25",
+            "30"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Cât face 5 × 6?",
+          "options": [
+            "25",
+            "30",
+            "35",
+            "40"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 4,
+          "question": "Cât face 5 × 8?",
+          "options": [
+            "35",
+            "40",
+            "45",
+            "50"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-3-001",
+      "title": "Înmulțirea cu numere de 2 cifre",
+      "discipline": "Matematică",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-23T10:15:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 12 × 5?",
+          "options": [
+            "55",
+            "60",
+            "65",
+            "70"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Cât face 15 × 4?",
+          "options": [
+            "55",
+            "60",
+            "65",
+            "70"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Cât face 20 × 8?",
+          "options": [
+            "140",
+            "150",
+            "160",
+            "170"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-3-002",
+      "title": "Operații cu numere până la 1000",
+      "discipline": "Matematică",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-24T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât face 345 + 234?",
+          "options": [
+            "567",
+            "578",
+            "579",
+            "589"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cât face 500 - 237?",
+          "options": [
+            "253",
+            "263",
+            "273",
+            "283"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Cât face 400 + 350?",
+          "options": [
+            "700",
+            "725",
+            "750",
+            "775"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-3-003",
+      "title": "Probleme practice",
+      "discipline": "Matematică",
+      "grade": "III",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-01-25T13:20:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Maria are 15 mere și primește încă 8. Câte mere are în total?",
+          "options": [
+            "21",
+            "22",
+            "23",
+            "24"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Într-o clasă sunt 25 de elevi. 10 sunt fete. Câți băieți sunt?",
+          "options": [
+            "13",
+            "14",
+            "15",
+            "16"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Un autobuz are 40 de locuri. Sunt ocupate 28. Câte locuri sunt libere?",
+          "options": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-3-004",
+      "title": "Măsurarea timpului",
+      "discipline": "Matematică",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-26T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Câte minute are o oră?",
+          "options": [
+            "30",
+            "50",
+            "60",
+            "100"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Câte ore are o zi?",
+          "options": [
+            "12",
+            "20",
+            "24",
+            "30"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Dacă acum sunt ora 10:00 și aștept 2 ore, ce oră va fi?",
+          "options": [
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-4-001",
+      "title": "Fracții simple",
+      "discipline": "Matematică",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-27T09:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât este jumătate din 20?",
+          "options": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cât este un sfert din 100?",
+          "options": [
+            "20",
+            "25",
+            "30",
+            "35"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Care fracție este mai mare: 1/2 sau 1/4?",
+          "options": [
+            "1/2",
+            "1/4",
+            "Sunt egale",
+            "Nu se poate compara"
+          ],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-4-002",
+      "title": "Împărțirea cu rest",
+      "discipline": "Matematică",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-28T10:45:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cât este 25 ÷ 4? (cât și rest)",
+          "options": [
+            "6 rest 1",
+            "5 rest 5",
+            "6 rest 0",
+            "7 rest 1"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "Cât este 17 ÷ 3? (cât și rest)",
+          "options": [
+            "5 rest 2",
+            "6 rest 1",
+            "5 rest 1",
+            "4 rest 5"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 3,
+          "question": "Cât este 30 ÷ 7? (cât și rest)",
+          "options": [
+            "4 rest 1",
+            "4 rest 2",
+            "5 rest 0",
+            "3 rest 9"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-4-003",
+      "title": "Probleme complexe",
+      "discipline": "Matematică",
+      "grade": "IV",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-01-29T14:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Un magazin vinde 5 caiete cu 12 lei bucata. Cât costă toate caietele?",
+          "options": [
+            "50 lei",
+            "55 lei",
+            "60 lei",
+            "65 lei"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Ana are 120 lei și cheltuie 35 lei. Apoi primește 20 lei. Câți lei are acum?",
+          "options": [
+            "95 lei",
+            "100 lei",
+            "105 lei",
+            "110 lei"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MAT-4-004",
+      "title": "Perimetrul și aria",
+      "discipline": "Matematică",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-30T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Un pătrat are latura de 5 cm. Cât este perimetrul?",
+          "options": [
+            "15 cm",
+            "20 cm",
+            "25 cm",
+            "30 cm"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Un dreptunghi are lungimea 6 cm și lățimea 4 cm. Cât este perimetrul?",
+          "options": [
+            "16 cm",
+            "18 cm",
+            "20 cm",
+            "24 cm"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Un pătrat are latura 4 cm. Cât este aria?",
+          "options": [
+            "8 cm²",
+            "12 cm²",
+            "16 cm²",
+            "20 cm²"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-1-001",
+      "title": "Literele alfabetului",
+      "discipline": "Comunicare în limba română",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-01-31T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care dintre următoarele este o vocală?",
+          "options": [
+            "B",
+            "C",
+            "A",
+            "D"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Cu ce literă începe cuvântul 'MAMA'?",
+          "options": [
+            "A",
+            "M",
+            "P",
+            "T"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Câte litere are alfabetul românesc?",
+          "options": [
+            "26",
+            "28",
+            "30",
+            "31"
+          ],
+          "correctAnswer": 3
+        },
+        {
+          "id": 4,
+          "question": "Care este ultima literă din alfabet?",
+          "options": [
+            "X",
+            "Y",
+            "Z",
+            "Ț"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-1-002",
+      "title": "Silabe și cuvinte",
+      "discipline": "Comunicare în limba română",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-01T10:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Câte silabe are cuvântul 'CA-SA'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Care cuvânt este scris corect?",
+          "options": [
+            "TATA",
+            "TTAA",
+            "ATAT",
+            "TAAT"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 3,
+          "question": "Cu ce literă se termină cuvântul 'COPIL'?",
+          "options": [
+            "C",
+            "O",
+            "I",
+            "L"
+          ],
+          "correctAnswer": 3
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-1-003",
+      "title": "Citire și înțelegere",
+      "discipline": "Comunicare în limba română",
+      "grade": "I",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-02-02T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care animal face 'HAM-HAM'?",
+          "options": [
+            "Pisica",
+            "Câinele",
+            "Vaca",
+            "Oaia"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce culoare are cerul senin?",
+          "options": [
+            "Roșu",
+            "Verde",
+            "Albastru",
+            "Galben"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Câte zile are o săptămână?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-1-004",
+      "title": "Cuvinte și sunete",
+      "discipline": "Comunicare în limba română",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-03T09:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cu ce sunet începe cuvântul 'SOARE'?",
+          "options": [
+            "S",
+            "O",
+            "A",
+            "R"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "Câte sunete are cuvântul 'MAMA'?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Care cuvânt rimează cu 'PAR'?",
+          "options": [
+            "CAR",
+            "POR",
+            "PIN",
+            "PAS"
+          ],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-2-001",
+      "title": "Substantive și adjective",
+      "discipline": "Comunicare în limba română",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-04T09:15:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care cuvânt este un substantiv?",
+          "options": [
+            "Frumos",
+            "Carte",
+            "Aleargă",
+            "Repede"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Care cuvânt arată cum este ceva (adjectiv)?",
+          "options": [
+            "Copil",
+            "Mare",
+            "Mănâncă",
+            "Ieri"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Găsește substantivul: 'Pisica este neagră'",
+          "options": [
+            "Pisica",
+            "Este",
+            "Neagră",
+            "Nu există"
+          ],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-2-002",
+      "title": "Propoziții simple",
+      "discipline": "Comunicare în limba română",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-05T10:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care este verbul în: 'Copilul citește o carte'?",
+          "options": [
+            "Copilul",
+            "Citește",
+            "Carte",
+            "O"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Completează: 'Eu ____ la școală'",
+          "options": [
+            "Merg",
+            "Merge",
+            "Mergem",
+            "Mergi"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 3,
+          "question": "Câte cuvinte sunt în: 'Ana are un cățel'?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-2-003",
+      "title": "Ortografie",
+      "discipline": "Comunicare în limba română",
+      "grade": "II",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-02-06T11:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care cuvânt este scris corect?",
+          "options": [
+            "Fericire",
+            "Fericirre",
+            "Ferisire",
+            "Ferricitre"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "Alege forma corectă:",
+          "options": [
+            "Şcoală",
+            "Scoală",
+            "Școală",
+            "Shcoală"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Care este pluralul cuvântului 'COPIL'?",
+          "options": [
+            "Copile",
+            "Copili",
+            "Copiii",
+            "Copiluri"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-2-004",
+      "title": "Familia de cuvinte",
+      "discipline": "Comunicare în limba română",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-07T09:45:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care cuvânt este din familia lui 'FLOARE'?",
+          "options": [
+            "Fruct",
+            "Înflorit",
+            "Copac",
+            "Verde"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Care cuvânt NU este din familia lui 'CARTE'?",
+          "options": [
+            "Cărți",
+            "Cărțulie",
+            "Cartonaș",
+            "Cocoș"
+          ],
+          "correctAnswer": 3
+        },
+        {
+          "id": 3,
+          "question": "Din ce familie face parte 'ZĂPADĂ'?",
+          "options": [
+            "Zăpăcit",
+            "Înzăpezit",
+            "Zăvor",
+            "Zarzăr"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-3-001",
+      "title": "Părți de vorbire",
+      "discipline": "Comunicare în limba română",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-08T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce parte de vorbire este 'REPEDE'?",
+          "options": [
+            "Substantiv",
+            "Verb",
+            "Adverb",
+            "Adjectiv"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Găsește verbul: 'Florile înfloresc primăvara'",
+          "options": [
+            "Florile",
+            "Înfloresc",
+            "Primăvara",
+            "Nu există"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Care este adjectivul: 'Cartea este interesantă'?",
+          "options": [
+            "Cartea",
+            "Este",
+            "Interesantă",
+            "Nu există"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-3-002",
+      "title": "Timpul verbelor",
+      "discipline": "Comunicare în limba română",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-09T10:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "La ce timp este verbul: 'Am mâncat'?",
+          "options": [
+            "Prezent",
+            "Trecut",
+            "Viitor",
+            "Imperativ"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Completează la viitor: 'Mâine eu ____ la parc'",
+          "options": [
+            "Merg",
+            "Am mers",
+            "Voi merge",
+            "Mergeam"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Care verb este la prezent?",
+          "options": [
+            "Citeam",
+            "Citesc",
+            "Am citit",
+            "Voi citi"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-3-003",
+      "title": "Pronume și articole",
+      "discipline": "Comunicare în limba română",
+      "grade": "III",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-02-10T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care este pronumele personal pentru prima persoană singular?",
+          "options": [
+            "Tu",
+            "El",
+            "Eu",
+            "Noi"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Care este articolul hotărât pentru 'COPIL'?",
+          "options": [
+            "Un",
+            "Copilul",
+            "Niște",
+            "Lui"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Care propoziție conține articol nehotărât?",
+          "options": [
+            "Copilul joacă",
+            "Un copil joacă",
+            "Copiii joacă",
+            "Copilului îi place"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-3-004",
+      "title": "Expresii și sensuri figurate",
+      "discipline": "Comunicare în limba română",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-11T09:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce înseamnă 'a avea cap'?",
+          "options": [
+            "A fi înalt",
+            "A fi deștept",
+            "A fi bolnav",
+            "A fi trist"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce înseamnă 'a fi alb ca varul'?",
+          "options": [
+            "A fi foarte curat",
+            "A fi foarte palid",
+            "A fi foarte fericit",
+            "A fi foarte bolnav"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Ce înseamnă 'a vorbi de la egal la egal'?",
+          "options": [
+            "A vorbi tare",
+            "A vorbi încet",
+            "A vorbi cu respect reciproc",
+            "A nu vorbi deloc"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-4-001",
+      "title": "Analiza gramaticală",
+      "discipline": "Comunicare în limba română",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-12T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care este subiectul: 'Maria citește o carte'?",
+          "options": [
+            "Maria",
+            "Citește",
+            "Carte",
+            "O"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "Care este predicatul: 'Copiii aleargă în parc'?",
+          "options": [
+            "Copiii",
+            "Aleargă",
+            "În",
+            "Parc"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Identifică complementul: 'Îmi place ciocolata'",
+          "options": [
+            "Îmi",
+            "Place",
+            "Ciocolata",
+            "Nu există"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-4-002",
+      "title": "Tipuri de propoziții",
+      "discipline": "Comunicare în limba română",
+      "grade": "IV",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-02-13T10:15:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce fel de propoziție este: 'Ce frumos este afară!'?",
+          "options": [
+            "Enunțiativă",
+            "Interogativă",
+            "Exclamativă",
+            "Imperativă"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Ce fel de propoziție este: 'Vino aici!'?",
+          "options": [
+            "Enunțiativă",
+            "Interogativă",
+            "Exclamativă",
+            "Imperativă"
+          ],
+          "correctAnswer": 3
+        },
+        {
+          "id": 3,
+          "question": "Ce fel de propoziție este: 'Unde locuiești?'?",
+          "options": [
+            "Enunțiativă",
+            "Interogativă",
+            "Exclamativă",
+            "Imperativă"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-4-003",
+      "title": "Sinonime și antonime",
+      "discipline": "Comunicare în limba română",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-14T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care este sinonimul pentru 'FRUMOS'?",
+          "options": [
+            "Urât",
+            "Plăcut",
+            "Rău",
+            "Trist"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Care este antonimul pentru 'MARE'?",
+          "options": [
+            "Imens",
+            "Uriaș",
+            "Mic",
+            "Lung"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Care este sinonimul pentru 'VESEL'?",
+          "options": [
+            "Trist",
+            "Fericit",
+            "Supărat",
+            "Plictisit"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLR-4-004",
+      "title": "Punctuație și ortografie",
+      "discipline": "Comunicare în limba română",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-15T09:45:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce semn de punctuație se pune la sfârșitul unei propoziții interogative?",
+          "options": [
+            ".",
+            "!",
+            "?",
+            ","
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Care cuvânt este scris corect?",
+          "options": [
+            "Înțelept",
+            "Închellept",
+            "Înțelepț",
+            "Întzelepț"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 3,
+          "question": "Când se folosește virgula?",
+          "options": [
+            "La sfârșitul propoziției",
+            "Pentru enumerări",
+            "După verb",
+            "Niciodată"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-1-001",
+      "title": "Anotimpurile",
+      "discipline": "Explorarea mediului",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-16T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "În ce anotimp ninge?",
+          "options": [
+            "Primăvară",
+            "Vară",
+            "Toamnă",
+            "Iarnă"
+          ],
+          "correctAnswer": 3
+        },
+        {
+          "id": 2,
+          "question": "În ce anotimp înfloresc pomii?",
+          "options": [
+            "Primăvară",
+            "Vară",
+            "Toamnă",
+            "Iarnă"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 3,
+          "question": "Câte anotimpuri sunt într-un an?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 4,
+          "question": "În ce anotimp este cel mai cald?",
+          "options": [
+            "Primăvară",
+            "Vară",
+            "Toamnă",
+            "Iarnă"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-1-002",
+      "title": "Animalele domestice",
+      "discipline": "Explorarea mediului",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-17T10:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care este animal domestic?",
+          "options": [
+            "Leu",
+            "Câine",
+            "Tigru",
+            "Elefant"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce animal face 'Miau'?",
+          "options": [
+            "Câinele",
+            "Pisica",
+            "Vaca",
+            "Oaia"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Ce ne dă vaca?",
+          "options": [
+            "Ouă",
+            "Lapte",
+            "Miere",
+            "Lână"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-1-003",
+      "title": "Corpul omenesc",
+      "discipline": "Explorarea mediului",
+      "grade": "I",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-02-18T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cu ce vedem?",
+          "options": [
+            "Urechi",
+            "Ochi",
+            "Nas",
+            "Gură"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Câte degete avem la o mână?",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "10"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Cu ce auzim?",
+          "options": [
+            "Ochi",
+            "Nas",
+            "Urechi",
+            "Gură"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-1-004",
+      "title": "Culori și forme în natură",
+      "discipline": "Explorarea mediului",
+      "grade": "I",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-19T09:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce culoare are iarba?",
+          "options": [
+            "Roșu",
+            "Verde",
+            "Albastru",
+            "Galben"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce formă are Soarele?",
+          "options": [
+            "Pătrat",
+            "Triunghi",
+            "Cerc",
+            "Dreptunghi"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Ce culoare are cerul senin?",
+          "options": [
+            "Verde",
+            "Roșu",
+            "Albastru",
+            "Galben"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-2-001",
+      "title": "Plante și animale",
+      "discipline": "Explorarea mediului",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-20T09:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "De ce au nevoie plantele pentru a crește?",
+          "options": [
+            "Apă și lumină",
+            "Doar apă",
+            "Doar lumină",
+            "Nimic"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "Care animal trăiește în apă?",
+          "options": [
+            "Câine",
+            "Pisică",
+            "Pește",
+            "Pasăre"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Ce produc florile?",
+          "options": [
+            "Frunze",
+            "Rădăcini",
+            "Semințe",
+            "Tulpini"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-2-002",
+      "title": "Apa și aerul",
+      "discipline": "Explorarea mediului",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-21T10:15:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "În ce stare este apa când îngheață?",
+          "options": [
+            "Lichidă",
+            "Solidă",
+            "Gazoasă",
+            "Nu se schimbă"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce respirăm din aer?",
+          "options": [
+            "Azot",
+            "Oxigen",
+            "Hidrogen",
+            "Carbon"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Când fierbe apa?",
+          "options": [
+            "La 0 grade",
+            "La 50 grade",
+            "La 100 grade",
+            "La 200 grade"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-2-003",
+      "title": "Zilele săptămânii și lunile anului",
+      "discipline": "Explorarea mediului",
+      "grade": "II",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-02-22T11:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Câte zile are o săptămână?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "Câte luni are un an?",
+          "options": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Care lună vine după ianuarie?",
+          "options": [
+            "Decembrie",
+            "Martie",
+            "Februarie",
+            "Aprilie"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-2-004",
+      "title": "Alimentația sănătoasă",
+      "discipline": "Explorarea mediului",
+      "grade": "II",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-23T09:45:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce alimente sunt sănătoase?",
+          "options": [
+            "Bomboane",
+            "Fructe și legume",
+            "Chips-uri",
+            "Băuturi carbogazoase"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Câte mese principale ar trebui să mâncăm pe zi?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "5"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 3,
+          "question": "Ce ar trebui să bem cel mai mult?",
+          "options": [
+            "Suc",
+            "Apă",
+            "Cola",
+            "Limonadă"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-3-001",
+      "title": "Sistemul solar",
+      "discipline": "Explorarea mediului",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-24T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care este steaua din centrul sistemului solar?",
+          "options": [
+            "Luna",
+            "Soarele",
+            "Venus",
+            "Marte"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Câte planete sunt în sistemul solar?",
+          "options": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Pe ce planetă trăim?",
+          "options": [
+            "Marte",
+            "Venus",
+            "Pământ",
+            "Jupiter"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-3-002",
+      "title": "Lanțul alimentar",
+      "discipline": "Explorarea mediului",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-25T10:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Cine sunt producătorii în lanțul alimentar?",
+          "options": [
+            "Animalele",
+            "Plantele",
+            "Omul",
+            "Insectele"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce mănâncă ierbivorele?",
+          "options": [
+            "Carne",
+            "Plante",
+            "Totul",
+            "Nimic"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Ce fel de animal este lupul?",
+          "options": [
+            "Ierbivor",
+            "Carnivor",
+            "Omnivor",
+            "Insectivor"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-3-003",
+      "title": "Harta României",
+      "discipline": "Explorarea mediului",
+      "grade": "III",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-02-26T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Care este capitala României?",
+          "options": [
+            "Cluj",
+            "Brașov",
+            "București",
+            "Iași"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "id": 2,
+          "question": "La ce mare se varsă Dunărea?",
+          "options": [
+            "Marea Roșie",
+            "Marea Neagră",
+            "Marea Mediterană",
+            "Marea Adriatică"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Care este cel mai înalt vârf din România?",
+          "options": [
+            "Moldoveanu",
+            "Negoiu",
+            "Omu",
+            "Bucegi"
+          ],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-3-004",
+      "title": "Ciclul apei în natură",
+      "discipline": "Explorarea mediului",
+      "grade": "III",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-27T09:30:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce se întâmplă cu apa când este încălzită de Soare?",
+          "options": [
+            "Îngheață",
+            "Se evaporă",
+            "Se topește",
+            "Dispare"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce sunt norii?",
+          "options": [
+            "Fum",
+            "Vapori de apă",
+            "Praf",
+            "Aer"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Când se formează ploaia?",
+          "options": [
+            "Când norii sunt ușori",
+            "Când picăturile din nori devin grele",
+            "Când este cald",
+            "Când bate vântul"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-4-001",
+      "title": "Protecția mediului",
+      "discipline": "Explorarea mediului",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-28T09:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce înseamnă reciclarea?",
+          "options": [
+            "Aruncarea gunoiului",
+            "Refolosirea materialelor",
+            "Arderea gunoiului",
+            "Îngroparea gunoiului"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce culoare are containerul pentru plastic?",
+          "options": [
+            "Verde",
+            "Galben",
+            "Albastru",
+            "Roșu"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "De ce este importantă economisirea apei?",
+          "options": [
+            "Nu este importantă",
+            "Apa este o resursă limitată",
+            "Pentru a cheltui mai puțin",
+            "Nu știu"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-4-002",
+      "title": "Istoria României",
+      "discipline": "Explorarea mediului",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-02-29T10:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "În ce an s-a unit Moldova cu Țara Românească?",
+          "options": [
+            "1859",
+            "1877",
+            "1918",
+            "1989"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "Cine a fost Mihai Viteazul?",
+          "options": [
+            "Scriitor",
+            "Domn",
+            "Pictor",
+            "Compozitor"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "În ce an s-a realizat Marea Unire?",
+          "options": [
+            "1859",
+            "1877",
+            "1918",
+            "1989"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-4-003",
+      "title": "Energia și forțele",
+      "discipline": "Explorarea mediului",
+      "grade": "IV",
+      "createdBy": 2,
+      "createdByName": "Ion Popescu",
+      "createdAt": "2024-03-01T11:00:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce tip de energie ne vine de la Soare?",
+          "options": [
+            "Nucleară",
+            "Solară",
+            "Eoliană",
+            "Hidro"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce se întâmplă când frecăm un balon de păr?",
+          "options": [
+            "Nu se întâmplă nimic",
+            "Se încarcă electric",
+            "Se sparge",
+            "Se umflă"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Care este sursa principală de energie pentru plante?",
+          "options": [
+            "Apa",
+            "Soarele",
+            "Solul",
+            "Aerul"
+          ],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "id": "TEST-MEM-4-004",
+      "title": "Ecosistemele României",
+      "discipline": "Explorarea mediului",
+      "grade": "IV",
+      "createdBy": 1,
+      "createdByName": "Administrator Școlii",
+      "createdAt": "2024-03-02T09:45:00",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Ce animale trăiesc în pădurile Carpaților?",
+          "options": [
+            "Lei și girafe",
+            "Urși și lupi",
+            "Elefanți și tigri",
+            "Pinguini și foci"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 2,
+          "question": "Ce este Delta Dunării?",
+          "options": [
+            "Un munte",
+            "O rezervație naturală",
+            "Un oraș",
+            "O vale"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "Care plante sunt specifice zonei montane?",
+          "options": [
+            "Cactuși",
+            "Palmieri",
+            "Brazi și molizi",
+            "Bananieri"
+          ],
+          "correctAnswer": 2
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "91eb",
+      "testId": "TEST-MEM-1-002",
+      "testTitle": "Animalele domestice",
+      "userId": 1,
+      "userName": "Administrator Școlii",
+      "score": 3,
+      "totalQuestions": 3,
+      "answers": [
+        1,
+        1,
+        1
+      ],
+      "completedAt": "2026-01-09T20:26:27.276Z"
+    },
+    {
+      "id": "0d5b",
+      "testId": "TEST-CLR-1-002",
+      "testTitle": "Silabe și cuvinte",
+      "userId": 6,
+      "userName": "Corina Stan",
+      "score": 3,
+      "totalQuestions": 3,
+      "answers": [
+        1,
+        0,
+        3
+      ],
+      "completedAt": "2026-01-09T20:28:06.374Z"
+    }
+  ]
+}

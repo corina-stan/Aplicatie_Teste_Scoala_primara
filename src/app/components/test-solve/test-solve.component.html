@@ -1,0 +1,259 @@
+<div class="test-solve-container">
+  <div class="container py-4">
+    <!-- Loading -->
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+        <span class="visually-hidden">Se încarcă...</span>
+      </div>
+      <p class="mt-3 text-muted">Se încarcă testul...</p>
+    </div>
+
+    <!-- Ecran înainte de începere -->
+    <div *ngIf="!loading && !testStarted && test" class="test-intro">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center py-4">
+          <h2 class="mb-0">{{ test.title }}</h2>
+          <span class="badge bg-light text-primary mt-2">{{ test.id }}</span>
+        </div>
+        <div class="card-body p-5">
+          <div class="row mb-4">
+            <div class="col-md-4 text-center mb-3">
+              <i class="bi bi-book info-icon text-primary"></i>
+              <h5 class="mt-2">Disciplina</h5>
+              <p class="text-muted">{{ test.discipline }}</p>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+              <i class="bi bi-mortarboard info-icon text-success"></i>
+              <h5 class="mt-2">Clasa</h5>
+              <p class="text-muted">{{ test.grade }}</p>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+              <i class="bi bi-question-circle info-icon text-info"></i>
+              <h5 class="mt-2">Întrebări</h5>
+              <p class="text-muted">{{ test.questions.length }}</p>
+            </div>
+          </div>
+
+          <div class="alert alert-info">
+            <h5><i class="bi bi-info-circle me-2"></i>Instrucțiuni:</h5>
+            <ul class="mb-0">
+              <li>Testul conține {{ test.questions.length }} întrebări</li>
+              <li>Pentru fiecare întrebare, selectează un singur răspuns corect</li>
+              <li>Poți naviga între întrebări folosind butoanele sau navigatorul de progres</li>
+              <li>Trebuie să răspunzi la toate întrebările pentru a trimite testul</li>
+              <li>La final vei vedea rezultatul și răspunsurile corecte</li>
+            </ul>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-primary btn-lg" (click)="startTest()">
+              <i class="bi bi-play-circle me-2"></i>
+              Începe Testul
+            </button>
+            <button class="btn btn-outline-secondary btn-lg ms-2" (click)="backToList()">
+              <i class="bi bi-arrow-left me-2"></i>
+              Înapoi
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rezolvare test -->
+    <div *ngIf="!loading && testStarted && !testCompleted && test" class="test-solving">
+      <!-- Bară progres -->
+      <div class="progress-bar-container mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">{{ test.title }}</h5>
+          <span class="badge bg-primary">
+            Întrebarea {{ currentQuestionIndex + 1 }} din {{ test.questions.length }}
+          </span>
+        </div>
+        <div class="progress" style="height: 10px;">
+          <div 
+            class="progress-bar" 
+            role="progressbar" 
+            [style.width.%]="getProgressPercentage()"
+            [attr.aria-valuenow]="getProgressPercentage()"
+            aria-valuemin="0" 
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <p class="text-muted mt-2 mb-0">
+          <small>{{ getProgressPercentage() }}% completat</small>
+        </p>
+      </div>
+
+      <!-- Navigator întrebări -->
+      <div class="question-navigator mb-4">
+        <div class="d-flex flex-wrap gap-2">
+          <button 
+            *ngFor="let q of test.questions; let i = index"
+            type="button"
+            class="btn btn-sm question-nav-btn"
+            [class.btn-primary]="i === currentQuestionIndex"
+            [class.btn-success]="i !== currentQuestionIndex && answers[i] !== -1"
+            [class.btn-outline-secondary]="i !== currentQuestionIndex && answers[i] === -1"
+            (click)="goToQuestion(i)"
+          >
+            {{ i + 1 }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Întrebare curentă -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body p-4">
+          <h4 class="question-text mb-4">
+            <span class="badge bg-primary me-2">{{ currentQuestionIndex + 1 }}</span>
+            {{ test.questions[currentQuestionIndex].question }}
+          </h4>
+
+          <div class="options-container">
+            <div 
+              *ngFor="let option of test.questions[currentQuestionIndex].options; let i = index"
+              class="option-item"
+              [class.selected]="answers[currentQuestionIndex] === i"
+              (click)="selectAnswer(i)"
+            >
+              <div class="form-check">
+                <input 
+                  class="form-check-input" 
+                  type="radio" 
+                  [name]="'question-' + currentQuestionIndex"
+                  [id]="'option-' + currentQuestionIndex + '-' + i"
+                  [checked]="answers[currentQuestionIndex] === i"
+                  (change)="selectAnswer(i)"
+                >
+                <label 
+                  class="form-check-label w-100" 
+                  [for]="'option-' + currentQuestionIndex + '-' + i"
+                >
+                  <span class="option-letter">{{ String.fromCharCode(65 + i) }}</span>
+                  {{ option }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Butoane navigare -->
+      <div class="d-flex justify-content-between">
+        <button 
+          class="btn btn-outline-secondary"
+          (click)="previousQuestion()"
+          [disabled]="currentQuestionIndex === 0"
+        >
+          <i class="bi bi-arrow-left me-2"></i>
+          Anterior
+        </button>
+
+        <button 
+          *ngIf="currentQuestionIndex < test.questions.length - 1"
+          class="btn btn-primary"
+          (click)="nextQuestion()"
+        >
+          Următorul
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+
+        <button 
+          *ngIf="currentQuestionIndex === test.questions.length - 1"
+          class="btn btn-success"
+          (click)="submitTest()"
+          [disabled]="!canSubmit()"
+        >
+          <i class="bi bi-check-circle me-2"></i>
+          Trimite Testul
+        </button>
+      </div>
+    </div>
+
+    <!-- Rezultat -->
+    <div *ngIf="!loading && testCompleted && test" class="test-results">
+      <div class="card shadow-lg border-0">
+        <div class="card-header text-white text-center py-4" [class]="'bg-' + getScoreClass()">
+          <h2 class="mb-0">Test Finalizat!</h2>
+          <p class="mb-0 mt-2">{{ getScoreMessage() }}</p>
+        </div>
+        <div class="card-body p-5">
+          <!-- Scor -->
+          <div class="text-center mb-4">
+            <div class="score-circle" [class]="getScoreClass()">
+              <div class="score-percentage">{{ getScorePercentage() }}%</div>
+              <div class="score-fraction">{{ score }} / {{ test.questions.length }}</div>
+            </div>
+          </div>
+
+          <!-- Statistici -->
+          <div class="row text-center mb-4">
+            <div class="col-md-4">
+              <i class="bi bi-check-circle stat-icon text-success"></i>
+              <h4 class="mt-2">{{ score }}</h4>
+              <p class="text-muted">Răspunsuri corecte</p>
+            </div>
+            <div class="col-md-4">
+              <i class="bi bi-x-circle stat-icon text-danger"></i>
+              <h4 class="mt-2">{{ test.questions.length - score }}</h4>
+              <p class="text-muted">Răspunsuri greșite</p>
+            </div>
+            <div class="col-md-4">
+              <i class="bi bi-question-circle stat-icon text-info"></i>
+              <h4 class="mt-2">{{ test.questions.length }}</h4>
+              <p class="text-muted">Total întrebări</p>
+            </div>
+          </div>
+
+          <!-- Răspunsuri detaliate -->
+          <div class="answers-review">
+            <h4 class="mb-3">
+              <i class="bi bi-clipboard-check me-2"></i>
+              Revizuire Răspunsuri
+            </h4>
+            <div *ngFor="let question of test.questions; let i = index" class="answer-item mb-3">
+              <div class="card" [class.border-success]="isAnswerCorrect(i, answers[i])" [class.border-danger]="!isAnswerCorrect(i, answers[i])">
+                <div class="card-body">
+                  <h6 class="mb-3">
+                    <span class="badge" [class.bg-success]="isAnswerCorrect(i, answers[i])" [class.bg-danger]="!isAnswerCorrect(i, answers[i])">
+                      {{ i + 1 }}
+                    </span>
+                    {{ question.question }}
+                  </h6>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="mb-1"><strong>Răspunsul tău:</strong></p>
+                      <p class="mb-0" [class.text-success]="isAnswerCorrect(i, answers[i])" [class.text-danger]="!isAnswerCorrect(i, answers[i])">
+                        <i [class.bi-check-circle]="isAnswerCorrect(i, answers[i])" [class.bi-x-circle]="!isAnswerCorrect(i, answers[i])" class="bi me-1"></i>
+                        {{ question.options[answers[i]] }}
+                      </p>
+                    </div>
+                    <div class="col-md-6" *ngIf="!isAnswerCorrect(i, answers[i])">
+                      <p class="mb-1"><strong>Răspuns corect:</strong></p>
+                      <p class="mb-0 text-success">
+                        <i class="bi bi-check-circle me-1"></i>
+                        {{ question.options[question.correctAnswer] }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Butoane acțiune -->
+          <div class="text-center mt-4">
+            <button class="btn btn-primary btn-lg me-2" (click)="retakeTest()">
+              <i class="bi bi-arrow-clockwise me-2"></i>
+              Reluează Testul
+            </button>
+            <button class="btn btn-outline-secondary btn-lg" (click)="backToDashboard()">
+              <i class="bi bi-house-door me-2"></i>
+              Dashboard
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
