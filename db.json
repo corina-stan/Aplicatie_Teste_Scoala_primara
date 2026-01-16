@@ -4,7 +4,7 @@
       "id": 1,
       "email": "admin@teste.ro",
       "password": "admin123",
-      "name": "Administrator Școlii",
+      "name": "Administrator",
       "role": "admin"
     },
     {
@@ -2275,6 +2275,36 @@
         3
       ],
       "completedAt": "2026-01-09T20:28:06.374Z"
+    },
+    {
+      "id": "dbdf",
+      "testId": "TEST-CLR-3-001",
+      "testTitle": "Părți de vorbire",
+      "userId": 4,
+      "userName": "Andrei Popescu",
+      "score": 2,
+      "totalQuestions": 3,
+      "answers": [
+        2,
+        2,
+        2
+      ],
+      "completedAt": "2026-01-10T14:32:18.640Z"
+    },
+    {
+      "id": "6af9",
+      "testId": "TEST-CLR-3-001",
+      "testTitle": "Părți de vorbire",
+      "userId": 4,
+      "userName": "Andrei Popescu",
+      "score": 2,
+      "totalQuestions": 3,
+      "answers": [
+        2,
+        0,
+        2
+      ],
+      "completedAt": "2026-01-10T14:34:46.331Z"
     }
   ]
 }
